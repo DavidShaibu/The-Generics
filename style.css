@@ -1,0 +1,326 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: #404040;
+    line-height: 1.6;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+img:hover,
+img:focus{
+    opacity: 0.8;
+}
+
+/* =================== */
+    /* Typography */
+/* =================== */
+
+h1, h2 {
+    font-family: 'Metal Mania', cursive;
+    font-weight: 900;
+    margin: 0px;
+}
+
+h1{
+    font-size: 4.5rem;
+    padding-left: 50px;
+    letter-spacing: .5px;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: .8em 0 0;
+}
+
+h3{
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    font-weight: 900;
+}
+
+
+.footer-text{
+    font-size: 2rem;
+}
+
+.subtitle{
+    font-weight: 900;
+}
+
+/* ===================== */
+    /* Grid Layout */
+/* ===================== */
+
+.main-grid{
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) minmax(0px, 600px) minmax(1em, 1fr);
+    grid-gap: 2em 2em;
+}
+
+@media (min-width: 600px){
+    .main-grid{
+        display: grid;
+        grid-template-columns: minmax(1em, 1fr) minmax(0px, 600px) minmax(0px, 600px) minmax(1em, 1fr);
+        grid-gap: 2em 2em;
+    }
+}
+
+/* ===================== */
+    /* Navigation */
+/* ===================== */
+
+.nav{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list{
+    margin: 0;
+    display: flex;
+    list-style: none;
+    border-bottom: .01px solid rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+    justify-content: center;
+    line-height: 2.5;
+}
+
+.nav-link{
+    text-decoration: none;
+    margin: 0 5em;
+    padding: .5em 0.5em;
+    color: white;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===================== */
+    /* Button */
+/* ===================== */
+
+.btn {
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+.btn-primary{
+    color: white;
+    margin-top: -5.5em;
+    margin-bottom: 3em;
+    padding: 1em 2.5em;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border: 2px solid lightblue;
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+    background: rgba(86, 204, 242, 0.2);
+}
+
+.btn-play{
+    background:rgba(86, 204, 242);
+    color: white;
+    padding: .5em 0.5em;
+    font-size: 0.8rem;
+    font-weight: 900;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-left: 10px;
+}
+
+.btn-play:hover,
+.btn-play:focus{
+    background: rgba(90, 209, 247, .4);
+    /* opacity: 0.8; */
+}
+
+
+/* ===================== */
+    /* Header Layout */
+/* ===================== */
+
+.header{
+    background-image: url(images/Header\ Background.jpg);
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.header-content > * {
+    grid-column: 1 / -1;
+}
+
+.main-title{
+    grid-column: 2  / -2;
+}
+
+.btn-primary{
+    justify-self: center;
+    grid-column: 2 / -2;    
+    margin-left: -150px;
+}
+
+/* ===================== */
+    /* Home Layout */
+/* ===================== */
+
+.main{
+    padding-bottom: 4em;
+    text-align: center;
+}
+.main-template > * {
+    grid-column: 2 / -2;
+}
+
+.col{
+    justify-self: center;
+}
+
+@media (min-width: 600px){
+    .main-title{
+        letter-spacing: 8px;
+    }
+
+    .main-template{
+        text-align: center;
+        grid-template-areas: 
+        ".title title ."
+        ".col1 col2 ."
+        ".col3 col4 .";
+    }
+    
+    
+    .music,
+    .cart {
+        grid-area: title;
+    }
+    
+    
+    .col1{
+        grid-area: col1;
+    }
+    
+    .col2{
+        grid-area: col2;
+    }
+    
+    .col3{
+        grid-area: col3;
+        align-self: start;
+    }
+    
+    .col4{
+        grid-area: col4;
+    }
+}
+
+/* ===================== */
+    /* footer Layout */
+/* ===================== */
+
+.footer{
+    background: rgba(86, 204, 242);
+    color: white;
+}
+
+
+.footer-text{
+    grid-column: 2 / span 1;
+    margin: 0.5em 0;
+    font-size: 2rem;
+}
+
+.footer-list{
+    display: flex;
+    list-style: none;
+    grid-column: -1;
+}
+
+.footer-link{
+    margin: 0 .2em;
+    padding: .1em .2em;
+    font-size: 2em;
+    color: white;
+    align-self: center;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 600px){
+    .footer-list{
+        grid-column: 3;
+        justify-self: end;
+    }
+}
+
+/* ===================== */
+    /* About Layout */
+/* ===================== */
+
+.about-main{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-img{
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 180px;
+    float: left;
+}
+
+.about-text{
+    margin-bottom: 4em;
+    text-align: left;
+}
+
+/* ===================== */
+    /* Store Layout */
+/* ===================== */
+
+.store-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-info{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.cart-info > * {
+    width: 300px;
+    border-bottom: 1px solid black;
+    margin: 0 2em;
+}
+
+.total {
+    text-align: right;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
